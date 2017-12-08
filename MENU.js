@@ -3,7 +3,7 @@ var MMENU = {
 
 		game.load.image('MENU', 'assets/MENU.jpg');
 		game.load.image('STAGE1', 'assets/STAGE1.jpg');
-		game.load.audio('intro', 'assets/The XX - Intro (Original Version).mp3');
+		game.load.audio('intro', 'audio/The XX - Intro (Original Version).mp3');
 		},
 		
 		create: function() {
