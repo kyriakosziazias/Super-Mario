@@ -96,5 +96,5 @@ var STAGE1 =  {
             
             if(lives==3){
             alert("GO GO GO!!");
-            }
+            },
           }
