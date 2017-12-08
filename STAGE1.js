@@ -96,5 +96,48 @@ var STAGE1 =  {
             
             if(lives==3){
             alert("GO GO GO!!");
-            },
+            }
           }
+	  
+	  function update() {
+         	game.physics.arcade.collide(player,pipe,pipeOverlap);
+			game.physics.arcade.collide(player, layer);
+			game.physics.arcade.collide(goombas, layer);
+			game.physics.arcade.overlap(player, goombas, goombaOverlap);
+            game.physics.arcade.collide(cores, layer);
+			game.physics.arcade.overlap(player, cores, coreOverlap);
+			game.physics.arcade.overlap(player, coins, coinOverlap);
+		  
+		  if (player.body.enable) {
+				player.body.velocity.x = 0;
+				if (cursors.left.isDown) {
+					player.body.velocity.x = -90;
+					player.animations.play('walkLeft');
+					player.goesRight = false;
+				} else if (cursors.right.isDown) {
+					player.body.velocity.x = 90;
+					player.animations.play('walkRight');
+					player.goesRight = true;
+				} else {
+					player.animations.stop();
+					if (player.goesRight)
+						player.frame = 0;
+					else
+						player.frame = 7;
+				}
+				if (cursors.up.isDown && player.body.onFloor()) {
+					player.body.velocity.y = -190;
+                    soundjump.play();
+					
+					player.animations.stop();
+				}
+				if (player.body.velocity.y != 0) {
+					if (player.goesRight)
+						player.frame = 5;
+					else
+						player.frame = 12;
+				}
+			}
+		}
+	  
+	  
