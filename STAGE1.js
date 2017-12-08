@@ -1,6 +1,7 @@
 var STAGE1 =  {
 		          preload: function() {
-                this.load.spritesheet('tiles', 'assets/super_mario_tiles.png', 16, 16);
+                this.load.spritesheet('tiles', 'assets/super_mario_tiles.png', 16,
+				      16);
 			          this.load.spritesheet('goomba', 'assets/goomba.png', 16, 16);
                 this.load.spritesheet('mario', 'assets/wario.png', 16, 16);
                 this.load.spritesheet('coin', 'assets/coin1.png', 16, 16);
@@ -21,16 +22,17 @@ var STAGE1 =  {
   
   
   
-		function create() {
+		create: function() {
 			      Phaser.Canvas.setImageRenderingCrisp(game.canvas)
 			      game.stage.backgroundColor = '#5c94fc';
 			      map = game.add.tilemap('level');
-            map.addTilesetImage('tiles', 'tiles');
+            		      map.addTilesetImage('tiles', 'tiles');
 			      map.setCollisionBetween(3, 12, true, 'solid');
-         map.setCollisionBetween(3, 12, true, 'pipe');
-            map.createLayer('background');
-         pipe = map.createLayer('pipe');
-         pipe.resizeWorld();
+        		      map.setCollisionBetween(3, 12, true, 'pipe');
+                              map.createLayer('background');
+			      pipe = map.createLayer('pipe');
+                              pipe.resizeWorld();
+        
 			      layer = map.createLayer('solid');
 			      layer.resizeWorld();
             coins = game.add.group();
@@ -51,7 +53,7 @@ var STAGE1 =  {
 
         //new enemy
             cores = game.add.group();
-			      cores.enableBody = true;
+	    cores.enableBody = true;
             map.createFromTiles(1, null, 'core', 'core', cores);
             cores.callAll('animations.add', 'animations', 'walk', [ 0, 1 ],
                 2, true);
@@ -67,8 +69,8 @@ var STAGE1 =  {
             player.body.collideWorldBounds = true;
             player.animations.add('walkRight', [ 1, 2, 3 ], 10, true);
             player.animations.add('walkLeft', [ 8, 9, 10 ], 10, true);
-          player.animations.add('Teleport', [10],10,false);
-			      player.goesRight = true;
+            player.animations.add('Teleport', [10],10,false);
+	    player.goesRight = true;
             
          //game sounds
             soundjump = game.add.sound('jump');
@@ -99,7 +101,7 @@ var STAGE1 =  {
             }
           }
 	  
-	  function update() {
+	  update: function() {
          	game.physics.arcade.collide(player,pipe,pipeOverlap);
 			game.physics.arcade.collide(player, layer);
 			game.physics.arcade.collide(goombas, layer);
