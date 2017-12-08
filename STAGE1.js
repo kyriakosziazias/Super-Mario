@@ -21,7 +21,7 @@ var STAGE1 =  {
   
   
   
-		create: function {
+		function create() {
 			      Phaser.Canvas.setImageRenderingCrisp(game.canvas)
 			      game.stage.backgroundColor = '#5c94fc';
 			      map = game.add.tilemap('level');
