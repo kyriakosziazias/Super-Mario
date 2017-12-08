@@ -1,7 +1,7 @@
 var MMENU = {
 	preload: function() {
 
-		game.load.image('MENU', 'assets/MENU.png');
+		game.load.image('MENU', 'assets/MENU.jpg');
 		game.load.image('STAGE1', 'assets/STAGE1.png');
 		game.load.audio('intro', 'assets/The XX - Intro (Original Version).mp3');
 		},
