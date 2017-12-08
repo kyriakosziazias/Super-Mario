@@ -99,7 +99,7 @@ var STAGE1 =  {
             if(lives==3){
             alert("GO GO GO!!");
             }
-          }
+          },
 	  
 	  update: function() {
          	game.physics.arcade.collide(player,pipe,pipeOverlap);
@@ -142,4 +142,4 @@ var STAGE1 =  {
 			}
 		}
 	  
-	  
+}
