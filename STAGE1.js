@@ -18,6 +18,7 @@ var STAGE1 =  {
               this.load.audio('bgm', 'audio/bgm.mp3');
               this.load.audio('death', 'audio/death.mp3');
               this.load.audio('core', 'audio/core.wav');
+	      this.load.audio('teleport', 'audio/teleport.wav');
 		},
   
   
@@ -77,6 +78,7 @@ var STAGE1 =  {
             soundcoin = game.add.sound('coin');
             soundstomp = game.add.sound('stomp');
             soundcore = game.add.sound('core');
+	    soundteleport = game.add.sound('teleport');
             
             soundtrack = game.add.sound('bgm');
             soundtrack.loop=true;
