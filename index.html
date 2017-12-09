@@ -38,6 +38,7 @@ body {
         function pipeOverlap(player,pipe){
 	if (cursors.down.isDown && (player.body.onFloor())) {
 		player.animations.play('Teleport');
+		soundteleport.play();
 		player.body.enable=false;
 		game.time.events.add(Phaser.Timer.SECOND*1.2 , function() {
 					player.body.enable=true;
