@@ -18,7 +18,7 @@ var MENU = {
 			
 			var MENUPic = game.add.sprite(8, 8, 'MENU');
 
-			var STAGEText = game.add.text(38, 150, 'STAGE1', {fontSize: '12px', fill: '#000'});
+			var STAGEText = game.add.text(20, 100, 'STAGE1', {fontSize: '12px', fill: '#000'});
 			var click1 = game.add.button(60, 197, 'STAGE1', function() {
 			game.state.start('STAGE1');
 			intro.stop();
